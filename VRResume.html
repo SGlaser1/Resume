@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang= en-us>
+  <head>
+    <meta charset="utf-8">
+    <title>Sarah's Virtual Resume</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+
+    <style type="text/css">
+        body { 
+                background-color: #7285A5; 
+                margin-left: 10%; 
+                margin-right: 10%; 
+                border: 2px dotted white; 
+                padding: 10px 10px 10px 10px; 
+                font-family: sans-serif; 
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Sarah's Virtual Resume</h1>
+      <ul>
+        <li>
+        <h3><a href = "VRHome.html">Home</a></h3>
+        <h3><a href = "VRAboutMe.html">About Me</a></h3>
+        <h3><a href = "VRResume.html">Resume</a></h3>
+        <h3><a href = "VRExperience.html">Experience</a></h3>
+        <h3><a href = "VREducation.html">Education</a></h3>
+        </li>
+      </ul>
+    <div id = "example"></div><BR><BR>
+    <script type = "text/babel">
+      var MenuItem = React.createClass({
+          render: function() {
+            return <div><h2>{this.props.heading1}</h2>
+                            <p>{this.props.children}</p>
+                          <ul>{this.props.bullets}</ul>
+                              </div>;
+          }
+      });
+
+      var Menu = React.createClass({
+          render: function() {
+            return ( 
+             <div>
+              
+               <MenuItem heading1 = "Resume">Please see below an attachment of my resume.</MenuItem>          
+             </div>
+            );
+          }
+      });
+
+      var mountNode = document.getElementById('example');
+      ReactDOM.render(<Menu />, mountNode);
+    </script>
+  </body>
+</html>
